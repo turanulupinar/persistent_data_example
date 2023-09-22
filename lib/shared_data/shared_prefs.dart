@@ -6,8 +6,9 @@ class CustomSharedPref {
     return prefs;
   }
 
-  Future<bool> setInt(int count, {String key = "counter"}) async {
+  Future<bool> setInt(int count, String key) async {
     final prefs = await initShared();
+    
 
     return await prefs.setInt(key, count);
   }
@@ -18,11 +19,5 @@ class CustomSharedPref {
     return prefs.getInt(key) ?? 0;
   }
 
-// await prefs.setBool('repeat', true);
-// // Save an double value to 'decimal' key.
-// await prefs.setDouble('decimal', 1.5);
-// // Save an String value to 'action' key.
-// await prefs.setString('action', 'Start');
-// // Save an list of strings to 'items' key.
-// await prefs.setStringList('items', <String>['Earth', 'Moon', 'Sun']);
+
 }
